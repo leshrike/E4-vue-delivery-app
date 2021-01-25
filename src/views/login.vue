@@ -88,7 +88,7 @@ export default {
     login() {
       this.$store.dispatch("login", this.user);
       this.user = {};
-      this.$router.push("/");
+      this.$router.push("/entregas");
     },
   },
 };

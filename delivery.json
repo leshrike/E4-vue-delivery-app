@@ -1,86 +1,86 @@
 {
-    "order":[
-        {
-            "id":"1",
-            "order":"1",
-            "address":"C/ Las Heras 54 1º",
-            "state":"0",
-            "timestamp":"15:00"
-        },
-        {
-            "id":"2",
-            "order":"2",
-            "address":"C/ Avenida Alicante 33 7º",
-            "state":"4",
-            "timestamp":"17:45"
-        },
-        {
-            "id":"3",
-            "order":"3",
-            "address":"C/ Nairobi 8 1º",
-            "state":"1",
-            "timestamp":"06:33"
-        },
-        {
-            "id":"4",
-            "order":"4",
-            "address":"C/ El tap 20",
-            "state":"2",
-            "timestamp":"14:05"
-        },
-        {
-            "id":"5",
-            "order":"5",
-            "address":"C/ Woodpecker 2º",
-            "state":"4",
-            "timestamp":"17:22"
-        }
-    ],
-    "state":[
-
-        {
-            "id":"0",
-            "name":"Preparado"
-        },
-        {
-            "id":"1",
-            "name":"En ruta"
-        },
-        {
-            "id":"2",
-            "name":"Entregado"
-        },
-        {
-            "id":"3",
-            "name":"No entregado"
-        },
-        {
-            "id":"4",
-            "name":"No entregado, destinatario ausente"
-        },
-        {
-            "id":"5",
-            "name":"No entregado, direcciónn incorrecta"
-        }
-    ],
-    "user":[
-        {
-            "id":"1",
-            "email":"admin@batoilogic.com",
-            "name":"admin",
-            "surname":"admin",
-            "rol":"admin",
-            "token":"1337",
-            "password":"1234"
-        },
-        {
-            "id":"2",
-            "email":"lvilaplana@batoilogic.com",
-            "name":"Leo",
-            "surname":"Vilaplana",
-            "rol":"dealer",
-            "token":"115",
-            "password":"1234"
-        }
-    ]
+  "deliveries": [
+    {
+      "id": "1",
+      "order": 3,
+      "address": "C/ Las Heras 54 1º",
+      "state": "1",
+      "timestamp": "13:31:08"
+    },
+    {
+      "id": "2",
+      "order": 1,
+      "address": "C/ Avenida Alicante 33 7º",
+      "state": "1",
+      "timestamp": "13:31:55"
+    },
+    {
+      "id": "3",
+      "order": 2,
+      "address": "C/ Nairobi 8 1º",
+      "state": "1",
+      "timestamp": "12:36:06",
+      "states": "3"
+    },
+    {
+      "id": "4",
+      "order": 2,
+      "address": "C/ El tap 20",
+      "state": "1",
+      "timestamp": "13:30:53"
+    },
+    {
+      "id": "5",
+      "order": 2,
+      "address": "C/ Woodpecker 2º",
+      "state": "2",
+      "timestamp": "13:30:01"
+    }
+  ],
+  "state": [
+    {
+      "id": "0",
+      "name": "Preparado"
+    },
+    {
+      "id": "1",
+      "name": "En ruta"
+    },
+    {
+      "id": "2",
+      "name": "Entregado"
+    },
+    {
+      "id": "3",
+      "name": "No entregado"
+    },
+    {
+      "id": "4",
+      "name": "No entregado, destinatario ausente"
+    },
+    {
+      "id": "5",
+      "name": "No entregado, dirección incorrecta"
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "email": "admin@batoilogic.com",
+      "name": "admin",
+      "surname": "admin",
+      "rol": "admin",
+      "token": "1337",
+      "password": "1234"
+    },
+    {
+      "id": "2",
+      "email": "lvilaplana@batoilogic.com",
+      "name": "Leo",
+      "surname": "Vilaplana",
+      "rol": "dealer",
+      "token": "115",
+      "password": "1234"
+    }
+  ]
 }
