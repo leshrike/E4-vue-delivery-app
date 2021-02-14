@@ -9,7 +9,6 @@ axios.interceptors.request.use((config) => {
     if (DEBUG) {
         console.info('Request', config);
     }
-
     const token = localStorage.token;
     if (token) {
         config.headers['Authorization'] = "Bearer " + localStorage.token;
@@ -27,7 +26,7 @@ axios.interceptors.request.use((config) => {
 
 axios.interceptors.response.use((response) => {
     if (DEBUG) {
-        console.info('Request', response);
+        console.info('Response', response);
     } return response;
 }, (error) => {
     if (error.response && error.response.status !== 400) {

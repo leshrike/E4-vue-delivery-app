@@ -9,7 +9,7 @@ export default new Vuex.Store({
     //recibimos todos los datos necesarios para la app y los almacenamos
 
     deliveries: [],
-    user: [],
+    user: {},
     states: [],
     //
     token: "",
@@ -26,7 +26,7 @@ export default new Vuex.Store({
 
     setStates(state, states) {
 
-      state.states = states
+      state.states = states;
 
     },
 
@@ -34,7 +34,6 @@ export default new Vuex.Store({
 
       state.token = user.token;
       localStorage.token = user.token;
-      localStorage.name = user.name;
 
     },
 
@@ -50,7 +49,7 @@ export default new Vuex.Store({
     changeDelivery(state, delivery) {
 
       const index = state.deliveries.findIndex(item => item.id === delivery.id)
-      if (index >= 0) state.deliveries.splice(index, 1, delivery);
+      if (index >= 0) state.deliveries.splice(index,1,delivery);
 
     },
 
@@ -78,26 +77,29 @@ export default new Vuex.Store({
     },
 
     loadStates(context) {
+      return new Promise ((resolve)=>{
       apiService.states
         .getAll()
         .then((response) => {
           context.commit('setStates', response.data);
-          context.commit('enRutaState');
-        })
+          resolve(response.data);
+          
+          })
         .catch((err) => {
           alert(err.message || err);
         })
+      })
     },
 
     loadOrders(context) {
       apiService.deliveries
         .getAll()
         .then((response) => {
-          context.commit('setOrders', response.data)
+          context.commit('setOrders', response.data);
         })
         .catch((err) => {
           alert(err.message || err)
-        });
+        })
     },
 
     login(context, user) {
@@ -111,22 +113,22 @@ export default new Vuex.Store({
         })
     },
 
-    enRutaState(context, id) {
-      context.commit('enRutaState', id);
+    enRutaState(context) {
+      context.commit('enRutaState');
     },
   },
-
-  modules: {
-  },
-
+  
   getters: {
     isAuthenticated: state => !!state.token,
     authStatus: state => state.status,
 
     //con este getter conseguimos obtener el estado concreto de un pedido 
-
-    getStateName: (state) => (id) => {
+    getState: (state) => (id) => {
       return state.states.find(state => state.id === id);
+    },
+
+    getDeliveryWithOrder:(state)=> (order)=> {
+      return state.deliveries.find(deliveries => deliveries.order === order);
     }
   }
 })

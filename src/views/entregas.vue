@@ -40,10 +40,14 @@ export default {
   components: {
     deliveryItem,
   },
-
   mounted() {
-    this.$store.dispatch("loadOrders");
-    this.$store.dispatch("enRutaState");
+    // comprobar la promesa porque sigue dando los errores al montar la tabla
+    this.$store.dispatch("loadStates").then(() => {
+      
+      this.$store.dispatch("enRutaState");
+      this.$store.dispatch("loadOrders");
+      
+    });
   },
   computed: {
     deliveries() {
