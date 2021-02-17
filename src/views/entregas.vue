@@ -1,8 +1,8 @@
 <template>
   <div class="row">
-    <b-button class="float-right" variant="danger"
-      ><a href="">Log-out <b-icon-box-arrow-right></b-icon-box-arrow-right></a
-    ></b-button>
+    
+      <a href="/logout" class="btn btn-danger float-right text-decoration-none"> Log-out <b-icon-box-arrow-right></b-icon-box-arrow-right></a>
+  
     <div class="col-sm-12 col-md-12 col-lg-12" id="entregas">
       <table class="table table-stripped table-hover">
         <thead class="thead-dark bg-primary">
