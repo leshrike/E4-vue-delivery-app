@@ -49,6 +49,30 @@ ssh batoilogic@ec2-3-87-71-72.compute-1.amazonaws.com // ssh batoilogic@3.87.71.
 
 ## Aplicación de repartidor -- Vue
 
+## Usuarios para probar las funcionalidades
+
+
+Dentro de esta aplicación tendremos diferentes funcionalidades que son exclusivas para cada rol usuario. Para probarlas, podremos hacer uso de los siguientes usuarios:
+
+### Usuario Administrador
+
+``` prolog
+
+    usuario: admin
+    email:   admin@batoilogic.com
+    contraseña: 1234
+    
+```
+
+### Usuario Repartidor / Dealer
+
+```prolog
+
+    usuario: dealer
+    email:   dealer@batoilogic.com
+    contraseña: 1234
+```
+
 ### Descargar
 Primero tendremos que descargar el repositorio que contiene nuestros archivos.
 
