@@ -47,8 +47,6 @@ ssh batoilogic@ec2-3-87-71-72.compute-1.amazonaws.com // ssh batoilogic@3.87.71.
 [App de tienda -- Vue JS](https://github.com/leshrike/tienda-batoilogic)  
 [Estilos y Guia de estilos](https://github.com/olbapgit/BatoiLogicDiw)
 
-## Aplicación de repartidor -- Vue
-
 ## Usuarios para probar las funcionalidades
 
 
@@ -72,6 +70,8 @@ Dentro de esta aplicación tendremos diferentes funcionalidades que son exclusiv
     email:   dealer@batoilogic.com
     contraseña: 1234
 ```
+
+## Aplicación de repartidor -- Vue
 
 ### Descargar
 Primero tendremos que descargar el repositorio que contiene nuestros archivos.
