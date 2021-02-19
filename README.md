@@ -188,9 +188,3 @@ En todos los servidores hemos usado el mismo usuario para realizar los despliegu
     usuario: batoilogic
     contraseña: 2468 
 ```
-Sin embargo, en la base de datos, el **usuario** será diferente
-
-```prolog
-    usuario: batoibackoffice
-    contraseña: 2468
-```
