@@ -180,3 +180,17 @@ En todos los servidores hemos usado el mismo usuario para realizar los despliegu
     usuario: batoilogic
     contraseña: 2468 
 ```
+Por lo tanto, para acceder a los servidores haremos uso de las siguientes directivas:
+
+**La clave pública de Alex está solo habilitada para el usuario batoilogic en los 3 servidores, en caso de necesitar acceso como el usuario "ubuntu", comunícanoslo**
+
+
+```prolog
+
+    Servidor de Base de Datos => ssh batoilogic@54.89.160.135
+    
+    Servidor web => ssh batoilogic@3.87.71.72
+    
+    Servidor DNS => ssh batoilogic@3.87.12.100
+
+```
