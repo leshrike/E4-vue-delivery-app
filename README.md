@@ -96,6 +96,15 @@ La versión utilizada es:
 -core-js 3.6.5 
 -vee-validate: 3.4.5 // validación de formularios
 -axios: 0.21.1 // peticiones AJAX
-
-
 ```
+
+## App en funcionamiento
+
+### Login
+
+[Panel del login](capturas de pantalla app repartidor/login.png)
+
+
+### Tabla de pedidos
+
+[Panel de pedidos](capturas de pantalla app repartidor/pedidos.png)
