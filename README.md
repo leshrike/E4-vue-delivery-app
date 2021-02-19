@@ -102,9 +102,9 @@ La versión utilizada es:
 
 ### Login
 
-[Panel del login](capturas de pantalla app repartidor/login.png)
+![Panel del login](capturas de pantalla app repartidor/login.png)
 
 
 ### Tabla de pedidos
 
-[Panel de pedidos](capturas de pantalla app repartidor/pedidos.png)
+![Panel de pedidos](capturas de pantalla app repartidor/pedidos.png)
