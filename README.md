@@ -11,15 +11,7 @@ Además,  los repartidores podrán hacer cambios en el orden o prioridad de los 
 Desde la aplicación de la tienda de batoilogic, los usuarios podrán visionar todos los productos que se encuentran a su disposición, además de poder hacer pedidos, de los mismos pedidos podríamos consultar sus datos. Podremos también consultar la información de contacto de la empresa.
 
 ## Servidores (DDAW)
-### SSH pem
-```
-DNS:
-ssh -i "ddaw-dns-g01.pem" ubuntu@ec2-3-87-12-100.compute-1.amazonaws.com
-Base de datos:
-ssh -i "ddaw-dns-g01.pem" ubuntu@ec2-54-89-160-135.compute-1.amazonaws.com
-Web:
-ssh -i "ddaw-dns-g01.pem" ubuntu@ec2-3-87-71-72.compute-1.amazonaws.com
-```
+
 ### SSH id_rsa.pub.
 ```
 DNS:
