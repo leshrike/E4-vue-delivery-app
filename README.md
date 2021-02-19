@@ -132,3 +132,65 @@ La versión utilizada es:
 ### Tabla de pedidos
 
 ![Panel de pedidos](https://github.com/leshrike/repartidor_batoilogic/blob/master/capturas%20de%20pantalla%20app%20repartidor/pedidos.png)
+
+## ¿Cómo desplegar esta página?
+
+Para desplegar esta aplicación haremos uso de un script bash, el cual encontraremos en el directorio raíz del proyecto.Para ejecutar el despliegue deberemos situarnos en el directorio raíz y deberemos introducir en nuestra consola o terminal el siguiente comando:
+
+```prolog
+    
+    deploy.bat
+       
+```
+Este script ejecutará la directiva npm run build, la cual compilará la aplicación y la llevará al directorio dist. Es desde aquí que ejecutaremos un scp con el cual copiaremos el contenido de la carpeta dist a la dirección que nos interese de nuestro servidor web.
+
+## Datos a resaltar sobre los servidores
+
+Para poder configurar los servidores hemos tenido que abrir los siguientes puertos:
+
+ Servidor de resolución de nombres de dominio -- DNS :
+ 
+```prolog
+
+Entrada: 80,22,21,443 (TCP) y 53 UDP
+
+Salida: 53(TCP) 53(UDP), Todos
+
+```
+### Servidor de Base de datos:
+ 
+ 
+ ```prolog
+ 
+ Entrada: 80, 22, 21, 3306, 443 
+ 
+ Salida: Todos, Mysql (3306, TCP) 
+ 
+ ```
+
+
+### Servidor web o servidor de aplicaciones:
+
+
+```prolog
+
+Entrada: 80,22,21,3306,443
+
+Salida: 3306 (TCP), Todos
+
+```
+
+### Usuario de despliegue
+
+En todos los servidores hemos usado el mismo usuario para realizar los despliegues y  tareas de administración.
+
+```prolog
+    usuario: batoilogic
+    contraseña: 2468 
+```
+Sin embargo, en la base de datos, el **usuario** será diferente
+
+```prolog
+    usuario: batoibackoffice
+    contraseña: 2468
+```
