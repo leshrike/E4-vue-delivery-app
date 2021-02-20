@@ -48,6 +48,14 @@ export default {
     },
   },
   methods: {
+    
+    parseState(id) {
+      //esta funcion llama a un getter que consigue transformar el id del estado del pedido a su nombre
+
+      let status = this.$store.getters.getState(id);
+      return status.name;
+    },
+
     changeState() {
       const modifiedDelivery = Object.assign({}, this.delivery);
 
@@ -58,6 +66,8 @@ export default {
       modifiedDelivery.timestamp = fecha.toLocaleTimeString();
 
       this.$store.dispatch("changeDelivery", modifiedDelivery);
+
+      alert('Se ha modificado el estado del pedido ' + this.delivery.id );
     },
 
     orderUp() {
@@ -75,7 +85,7 @@ export default {
       //obtenemos el objeto relativo al producto que se encuentra en el orden que queremos ocupar
       const replacedOrder = this.$store.getters.getDeliveryWithOrder(orderTarget);
 
-      if (replacedOrder.order > 0) {
+      if (replacedOrder.order) {
 
         modifiedDelivery.order = replacedOrder.order;
         replacedOrder.order = newTarget;
@@ -121,13 +131,6 @@ export default {
       } else {
         alert("No puede quitarle más prioridad a este pedido");
       }
-    },
-
-    parseState(id) {
-      //esta funcion llama a un getter que consigue transformar el id del estado del pedido a su nombre
-
-      let status = this.$store.getters.getState(id);
-      return status.name;
     },
   },
 };
