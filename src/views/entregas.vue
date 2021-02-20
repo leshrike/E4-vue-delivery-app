@@ -1,11 +1,13 @@
 <template>
-  <div class="row">
-    
-      <a href="/logout" class="btn btn-danger float-right text-decoration-none"> Log-out <b-icon-box-arrow-right></b-icon-box-arrow-right></a>
-  
-    <div class="col-sm-12 col-md-12 col-lg-12" id="entregas">
-      <table class="table table-stripped table-hover">
-        <thead class="thead-dark bg-primary">
+  <div class="container">
+    <div class="header-batoi offset-3 col-6 col-lg-12 offset-lg-0 justify-content-center">
+      <b-button class="btn-red"
+        ><a href="">Log-out <b-icon-box-arrow-right></b-icon-box-arrow-right></a
+      ></b-button>
+    </div>
+    <div class="col-12" id="entregas">
+      <table class="table table-stripped table-hover table-repartidor">
+        <thead>
           <tr>
             <th>ID del Pedido</th>
             <th>Dirección</th>

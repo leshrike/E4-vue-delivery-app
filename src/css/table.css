@@ -1,0 +1,23 @@
+.table-repartidor thead tr {
+  background-color: #181818;
+}
+.table-repartidor thead tr th {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  color: white;
+}
+.table-repartidor tbody tr {
+  background-color: white;
+}
+.table-repartidor tbody tr td {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  color: #181818;
+}
+.table-repartidor tbody tr td .btn-green {
+  background-color: #1DD658;
+}
+.table-repartidor tbody tr td .btn-black {
+  background-color: #181818;
+  color: white;
+}
