@@ -1,0 +1,17 @@
+.header-batoi .btn-red {
+  background-color: #EF4444;
+  width: 100%;
+}
+.header-batoi .btn-red a {
+  text-decoration: none;
+  color: white;
+}
+.header-batoi :hover {
+  background-color: white !important;
+  transition: all 2s;
+}
+.header-batoi :hover a {
+  background-color: white !important;
+  color: #181818 !important;
+  transition: all 2s;
+}

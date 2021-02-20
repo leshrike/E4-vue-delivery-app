@@ -17,13 +17,13 @@
 
     <td>
       <!--Botones para las acciones (subir, bajar y editar (cambiará el estado por un select) )-->
-      <button class="btn btn-dark" v-on:click="orderUp()">
+      <button class="btn btn-black" v-on:click="orderUp()">
         <b-icon-arrow-up></b-icon-arrow-up>
       </button>
-      <button class="btn btn-dark" v-on:click="orderDown()">
+      <button class="btn btn-black" v-on:click="orderDown()">
         <b-icon-arrow-down></b-icon-arrow-down>
       </button>
-      <button class="btn btn-success" v-on:click="editing = !editing">
+      <button class="btn btn-green" v-on:click="editing = !editing">
         <b-icon-pencil></b-icon-pencil>
       </button>
     </td>
