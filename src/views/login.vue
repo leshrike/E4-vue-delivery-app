@@ -15,8 +15,8 @@
             <input
               class="form-control"
               type="email"
-              name="email"
-              v-model="user.email"
+              name="login"
+              v-model="user.login"
               placeholder="ejemplo@example.com"
             />
             <span class="error">{{ error }}</span>

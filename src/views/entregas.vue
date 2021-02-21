@@ -10,18 +10,18 @@
         <thead>
           <tr>
             <th>ID del Pedido</th>
-            <th>Dirección</th>
+            <th>Destinatario</th>
             <th>Estado de la Entrega</th>
-            <th>Ultima actualizacion:</th>
+            <th>Fecha de entrega:</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           <!--Aquí encontraremos todos los pedidos-->
           <delivery-item
-            v-for="delivery in deliveries"
-            :key="delivery.id"
-            :delivery="delivery"
+            v-for="order in orders"
+            :key="order.id"
+            :order="order"
           ></delivery-item>
         </tbody>
       </table>
@@ -35,7 +35,7 @@ import deliveryItem from "../components/deliveryItem";
 export default {
   data: function () {
     return {
-      delivery: {},
+      order: {},
     };
   },
 
@@ -53,11 +53,11 @@ export default {
   },
   computed: {
     deliveries() {
-      let pedidos = this.$store.state.deliveries;
+      let orders = this.$store.state.orders;
 
-      pedidos.sort((a, b) => (a.order < b.order ? -1 : +1));
+      orders.sort((a, b) => (a.order < b.order ? -1 : +1));
 
-      return pedidos;
+      return orders;
     },
   },
   methods: {},

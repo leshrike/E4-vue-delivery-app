@@ -1,11 +1,11 @@
 <template>
   <tr>
-    <td>{{ delivery.id }}</td>
-    <td>{{ delivery.address }}</td>
-    <td v-show="!editing">{{ parseState(delivery.state) }}</td>
+    <td>{{ order.id }}</td>
+    <td>{{ order.client_id }}</td>
+    <td v-show="!editing">{{ order.state_id }}</td>
     <!--Mostramos la conversion ya realizada del estado del pedido-->
     <td v-show="editing">
-      <select @blur="changeState" v-model="delivery.state">
+      <select @blur="changeState" v-model="order.state_id">
         <state-item
           v-for="state in states"
           :key="state.id"
@@ -13,7 +13,7 @@
         ></state-item>
       </select>
     </td>
-    <td>{{ delivery.timestamp }}</td>
+    <td>{{ delivery.delivery_date }}</td>
 
     <td>
       <!--Botones para las acciones (subir, bajar y editar (cambiará el estado por un select) )-->

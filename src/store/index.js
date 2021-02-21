@@ -8,19 +8,18 @@ export default new Vuex.Store({
   state: {
     //recibimos todos los datos necesarios para la app y los almacenamos
 
-    deliveries: [],
+    orders: [],
     user: {},
     states: [],
-    //
     token: "",
 
   },
 
   mutations: {
 
-    setOrders(state, deliveries) {
+    setOrders(state, orders) {
 
-      state.deliveries = deliveries;
+      state.orders = orders;
 
     },
 
@@ -30,16 +29,16 @@ export default new Vuex.Store({
 
     },
 
-    login(state, user) {
+    login(state, token) {
 
-      state.token = user.token;
-      localStorage.token = user.token;
+      state.token = token;
+      localStorage.token = token;
 
     },
 
     enRutaState(state) {
 
-      state.deliveries.forEach(delivery => {
+      state.orders.forEach(delivery => {
         delivery.state = "1";
 
       });
@@ -48,8 +47,8 @@ export default new Vuex.Store({
 
     changeDelivery(state, delivery) {
 
-      const index = state.deliveries.findIndex(item => item.id === delivery.id)
-      if (index >= 0) state.deliveries.splice(index,1,delivery);
+      const index = state.orders.findIndex(item => item.id === delivery.id)
+      if (index >= 0) state.orders.splice(index,1,delivery);
 
     },
 
@@ -66,10 +65,9 @@ export default new Vuex.Store({
 
     changeDelivery(context, delivery) {
 
-      apiService.deliveries
-        .modify(delivery)
+      apiService.orders.modify(delivery)
         .then((response) => {
-          context.commit('changeDelivery', response.data)
+          context.commit('changeDelivery', response.data.data)
         })
         .catch((error) => {
           alert(error || error.message);
@@ -78,10 +76,9 @@ export default new Vuex.Store({
 
     loadStates(context) {
       return new Promise ((resolve)=>{
-      apiService.states
-        .getAll()
+      apiService.states.getAll()
         .then((response) => {
-          context.commit('setStates', response.data);
+          context.commit('setStates', response.data.data);
           resolve(response.data);
           
           })
@@ -92,10 +89,10 @@ export default new Vuex.Store({
     },
 
     loadOrders(context) {
-      apiService.deliveries
+      apiService.orders
         .getAll()
         .then((response) => {
-          context.commit('setOrders', response.data);
+          context.commit('setOrders', response.data.data);
         })
         .catch((err) => {
           alert(err.message || err)
@@ -103,10 +100,9 @@ export default new Vuex.Store({
     },
 
     login(context, user) {
-      apiService.user
-        .login(user)
+      apiService.users.login(user)
         .then((response) => {
-          context.commit('login', response[0]);
+          context.commit('login', response);
         })
         .catch((error) => {
           alert(error.message || error.status || error);
@@ -128,7 +124,7 @@ export default new Vuex.Store({
     },
 
     getDeliveryWithOrder:(state)=> (order)=> {
-      return state.deliveries.find(deliveries => deliveries.order === order);
+      return state.orders.find(orders => orders.order === order);
     }
   }
 })
