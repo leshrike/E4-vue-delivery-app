@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="header-batoi offset-3 col-6 col-lg-12 offset-lg-0 justify-content-center">
-      <b-button class="btn-red"
-        ><a href="">Log-out <b-icon-box-arrow-right></b-icon-box-arrow-right></a
+      <b-button class="btn-red" @click="logout()"
+        ><a>Log-out <b-icon-box-arrow-right></b-icon-box-arrow-right></a
       ></b-button>
     </div>
     <div class="col-12" id="entregas">
@@ -50,6 +50,13 @@ export default {
       return orders;
     },
   },
-  methods: {},
+  methods: {
+    logout(){
+      localStorage.removeItem('token');
+      this.$router.push('/login');
+
+    }
+
+  },
 };
 </script>

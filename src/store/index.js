@@ -76,6 +76,7 @@ export default new Vuex.Store({
       apiService.users.login(user)
         .then((response) => {
           context.commit('login', response);
+          
         })
         .catch((error) => {
           alert(error.message || error.status || error);
@@ -84,6 +85,10 @@ export default new Vuex.Store({
     enRutaState(context) {
       context.commit('enRutaState');
     },
+
+    logout(context){
+      context.commit('logout');
+    }
   },
   getters: {
     isAuthenticated: state => !!state.token,

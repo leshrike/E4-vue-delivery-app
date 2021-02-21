@@ -29,6 +29,7 @@ const routes = [
     beforeEnter:(to,from,next)=>{
         if(!localStorage.token){
           next(false);
+
         }else{
           next();
         }
