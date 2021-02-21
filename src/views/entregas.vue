@@ -12,17 +12,17 @@
             <th>ID del Pedido</th>
             <th>Destinatario</th>
             <th>Estado de la Entrega</th>
-            <th>Fecha de entrega:</th>
+            <th>Fecha de entrega</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           <!--Aquí encontraremos todos los pedidos-->
-          <delivery-item
+          <order-item
             v-for="order in orders"
             :key="order.id"
             :order="order"
-          ></delivery-item>
+          ></order-item>
         </tbody>
       </table>
     </div>
@@ -30,33 +30,23 @@
 </template>
 
 <script>
-import deliveryItem from "../components/deliveryItem";
+import orderItem from "../components/orderItem";
 
 export default {
-  data: function () {
-    return {
-      order: {},
-    };
-  },
-
   components: {
-    deliveryItem,
+    orderItem,
   },
   mounted() {
     // comprobar la promesa porque sigue dando los errores al montar la tabla
     this.$store.dispatch("loadStates").then(() => {
-      
       this.$store.dispatch("enRutaState");
       this.$store.dispatch("loadOrders");
-      
     });
   },
   computed: {
-    deliveries() {
+    orders() {
       let orders = this.$store.state.orders;
-
       orders.sort((a, b) => (a.order < b.order ? -1 : +1));
-
       return orders;
     },
   },
