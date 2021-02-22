@@ -123,7 +123,7 @@ La versión utilizada es:
 
 ### Tabla de pedidos
 
-![Panel de pedidos](https://github.com/leshrike/repartidor_batoilogic/blob/master/capturas%20de%20pantalla%20app%20repartidor/pedidos.png)
+![Panel de pedidos](https://cdn.discordapp.com/attachments/800737769450242098/813330442986979338/unknown.png)
 
 ## ¿Cómo desplegar esta página?
 
